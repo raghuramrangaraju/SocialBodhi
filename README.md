@@ -1,6 +1,13 @@
-# SocialBodhi
+﻿# SocialBodhi
 The Social Decision Engine. 
 
-This project is the replica of http://www.socialbodhi.com/. 
+Demo site URL (http://socialbodhi.comeze.com/bodhiproject/AdminLTE-master/pages/layout/firstpage.html). 
 
-I have used Bootstrap framework for this web page. 
+This project is the model of (http://www.socialbodhi.com/). 
+
+I have changed the entire design of the web page. Then web page has a responsive interface for desktops, tablets and mobile phones. 
+
+
+Technologies: HTML, CSS, Bootstrap, jQuery and JavaScript. 
+
+
