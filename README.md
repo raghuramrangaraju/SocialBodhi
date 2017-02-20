@@ -5,7 +5,7 @@ Demo site URL (http://socialbodhi.comeze.com/bodhiproject/AdminLTE-master/pages/
 
 This project is the model of (http://www.socialbodhi.com/). 
 
-I have changed the entire design of the web page. Then web page has a responsive interface for desktops, tablets and mobile phones. 
+I have changed the entire design of the web page. The web page has a responsive interface for desktops, tablets and mobile phones. 
 
 
 Technologies: HTML, CSS, Bootstrap, jQuery and JavaScript. 
