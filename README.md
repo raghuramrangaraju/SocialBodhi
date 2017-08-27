@@ -1,13 +1,20 @@
 ﻿# SocialBodhi
-The Social Decision Engine. 
+The Social Decision Engine. When you are ended up with choices you could get suggestion from your friends.
+
+## Screenshots
+![alt text](https://github.com/rahuram777/SocialBodhi/blob/master/socialbodhi/screenshots/socialbodhi.png)
+
+![alt text](https://github.com/rahuram777/SocialBodhi/blob/master/socialbodhi/screenshots/socialbodhi1.png)
 
 Demo site URL (http://socialbodhi.comeze.com/bodhiproject/AdminLTE-master/pages/layout/firstpage.html). 
 
-This project is the model of (http://www.socialbodhi.com/). 
-
-I have changed the entire design of the web page. The web page has a responsive interface for desktops, tablets and mobile phones. 
-
 
 Technologies: HTML, CSS, Bootstrap, jQuery and JavaScript. 
+
+
+For any questions regards to this app. Please email me.
+
+Email Id: rahuram777@gmail.com
+LinkedIn : https://www.linkedin.com/in/rahuram777
 
 
