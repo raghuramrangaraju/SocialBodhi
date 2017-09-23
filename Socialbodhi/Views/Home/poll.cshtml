@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewBag.Title = "poll";
+    Layout = "~/Views/Shared/_Newlayout.cshtml";
+}
+<style>
+    .min-height {
+        min-height: 500px;
+    }
+</style>
+
+<div class="wrapper" style="overflow: hidden;height: auto;">
+    <!-- Full Width Column -->
+    <div class="content-wrapper" style="min-height: 1775px;">
+        <div class="container">
+            <div class="col-md-12">
+                <!-- Widget: user widget style 1 -->
+                <div class="box box-widget widget-user-2">
+                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                    <div class="widget-user-header ">
+                        <div class="widget-user-image">
+                            <img src="~/AdminLTE-master/bodhi-tree-blue.jpg" width="100%" alt="Bodhi">
+                        </div>
+                        <h1 class="widget-user-username">
+                            SocialBodhi
+                            <p>
+                                <small>The Social Decision Engine</small>
+                            </p>
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.widget-user -->
+            </div>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box box-primary min-height">
+                                        <div class="box-header">
+                                            <button class="btn btn-success" onclick="update()" id="submitbutton"> Submit</button>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body table-responsive no-padding">
+                                            <table class="table table-hover" id="maintable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Participants</th>
+                                                        @foreach (var item in ViewBag.choices as List<Socialbodhi.Models.Choice>)
+                                                        {
+                                                            <th>@item.ChoiceName</th>
+                                                        }
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tablebody">
+                                                    @foreach (var item in ViewBag.participants as List<Socialbodhi.Models.poll>)
+                                                    {
+                                                        if (item.Participantsemail == ViewBag.email)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group col-lg-5">
+                                                                        <label>@item.Participantsemail</label>
+                                                                    </div>
+                                                                </td>
+                                                                @foreach (var data in item.participant)
+                                                                {
+                                                                    if (data.Status == false)
+                                                                    {
+                                                                            <td>
+                                                                                <div class="form-group">
+                                                                                    <input type="range" min="0" max="100" value="0" step="5" name=@data.ParticipantsId class="input_range">
+                                                                                </div>
+                                                                            </td>
+                                                                    }
+                                                                    else {
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                <label>@data.Rating % </label>
+                                                                            </div>
+                                                                        </td>
+
+                                                                    }
+
+                                                                }
+                                                            </tr>
+                                                        }
+                                                        else {
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-group col-lg-5">
+                                                                        <label>@item.Participantsemail</label>
+                                                                    </div>
+                                                                </td>
+                                                                @foreach (var data in item.participant)
+                                                                {
+
+                                                                        <td>
+                                                                            <div class="form-group">
+                                                                                @if (data.Rating == null)
+                                                                                {
+                                                                                    <label>0</label>
+                                                                                }
+                                                                                else {
+                                                                                    <label>
+                                                                                        @data.Rating %
+                                                                                     </label>
+                                                                                }
+                                                                            </div>
+                                                                        </td>
+                                                                }
+                                                            </tr>
+                                                        }
+                                                    }
+                                                    </tbody>
+                                                    </table>
+                                            @if (@ViewBag.topchoicename != "")
+                                            {
+                                                <div class="col-lg-6"> <p> The Poll top choice is <span class="text-green"><b>@ViewBag.topchoicename</b></span></p></div>
+                                            }
+                                            
+                                                </div>
+                                                <!-- /.box-body -->
+                                            </div>
+                                            <!-- /.box -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box -->
+                            </div>
+                            <!--/.col (left) -->
+                            <!--/.col (right) -->
+                    </div>
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <!-- general form elements -->
+                            <div class="box box-success ">
+                                <div class="box-header with-border">
+                                </div>
+                                <ul>
+                                    <li>
+                                        Bodhi means Enlighentment/Awakening; SocialBodhi is a Social Awakening/Enlightenment for any question or decision in your life! Just like the 35 Buddhas or the 5 Wisdom Buddhas, use your friends' wisdom to free yourself
+                                        from the cycle of decision and indecision by using your friends and family! Setup your Social Interaction Tree below!
+                                    </li>
+                                </ul>
+                                <br>
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!--/.col (left) -->
+                        <!--/.col (right) -->
+                    </div>
+                    <!-- /.box -->
+                    </section>
+                    <!-- /.content -->
+                </div>
+                <!-- /.container -->
+            </div>
+
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="container">
+                    <div class="pull-right hidden-xs">
+                        <b> </b>
+                    </div>
+                    <strong>Copyright © 2016 <a href="http://socialbodhi.com/">SocialBodhi</a>.</strong> All rights reserved.
+                </div>
+                <!-- /.container -->
+            </footer>
+            </div>
+
+            <script type="text/javascript">
+            
+                function update(){
+                
+                    var values = [];
+                    var test_arr = $("input[class*='input_range']");
+                    $.each(test_arr, function (i, item) {  //i=index, item=element in array
+                        debugger;
+                        var participantId = "";
+                        participantId += $(this).attr('name');
+                        participantId += " " + $(item).val();
+                        values.push(participantId);
+                    });
+                        
+
+                    if (values != null)
+                    {
+                        $('#submitbutton').prop('disabled', true);
+                        $.ajax({
+                            type: "POST",
+                            url: "../Home/pollupdate",
+                            data: { 'participantId': values },
+                            success: function (response) {
+                                location.reload();
+                            },
+                            error: function (response) { }
+                        });
+                    }
+                }
+
+            </script>

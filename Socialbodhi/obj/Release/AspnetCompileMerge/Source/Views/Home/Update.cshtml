@@ -1,0 +1,301 @@
+﻿@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Newlayout.cshtml";
+}
+<style>
+    .min-height {
+        min-height: 500px;
+    }
+</style>
+
+<div class="wrapper" style="overflow: hidden;height: auto;">
+    <!-- Full Width Column -->
+    <div class="content-wrapper" style="min-height: 1775px;">
+        <div class="container">
+            <div class="col-md-12">
+                <!-- Widget: user widget style 1 -->
+                <div class="box box-widget widget-user-2">
+                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                    <div class="widget-user-header ">
+                        <div class="widget-user-image">
+                            <img src="~/AdminLTE-master/bodhi-tree-blue.jpg" width="100%" alt="Bodhi">
+                        </div>
+                        <h1 class="widget-user-username">
+                            SocialBodhi
+                            <p>
+                                <small>The Social Decision Engine</small>
+                            </p>
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.widget-user -->
+            </div>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box box-primary min-height">
+                                        <div class="box-header">
+                                          <button class="btn btn-success" onclick="addrows()"><i class="glyphicon glyphicon-plus"></i> Add Choices</button> <button class="btn btn-social btn-primary" onclick="setmytree()"><i class="fa fa-tree"></i> Setup my Bodhi Tree</button>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body table-responsive no-padding">
+                                            <table class="table table-hover" id="maintable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Choices</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tablebody">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-group col-lg-5">
+                                                                <input class="form-control" name="choices" placeholder="Enter choices" type="text" value="Dabang">
+                                                            </div>
+                                                        </td>
+                                                       
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-group col-lg-5">
+                                                                <input class="form-control" name="choices" placeholder="Enter choices" type="text" value="Dangal">
+                                                            </div>
+                                                        </td>
+                                                   
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!--/.col (left) -->
+                    <!--/.col (right) -->
+                </div>
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-success ">
+                            <div class="box-header with-border">
+                            </div>
+                            <ul>
+                                <li>
+                                    Bodhi means Enlighentment/Awakening; SocialBodhi is a Social Awakening/Enlightenment for any question or decision in your life! Just like the 35 Buddhas or the 5 Wisdom Buddhas, use your friends' wisdom to free yourself
+                                    from the cycle of decision and indecision by using your friends and family! Setup your Social Interaction Tree below!
+                                </li>
+                            </ul>
+                            <br>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!--/.col (left) -->
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update screen</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="box box-primary">
+                                    <!-- /.box-header -->
+                                    <div class="box-body table-responsive no-padding">
+                                        <table class="table table-hover" id="modaltable">
+                                            <thead id="modalhead">
+
+                                                <button class="btn btn-success" onclick="addparticipants()"/> Add participants</button>
+                                                </thead>
+                                            <tbody id="modalbody"></tbody>
+                                        </table>
+                                        <div id="result" style="color:green"> </div>
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                                <!-- /.box -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" onclick="Sendemail()" id="sendmailbutton">Send </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="pull-right hidden-xs">
+                <b> </b>
+            </div>
+            <strong>Copyright © 2016 <a href="http://socialbodhi.com/">SocialBodhi</a>.</strong> All rights reserved.
+        </div>
+        <!-- /.container -->
+    </footer>
+</div>
+
+<script type="text/javascript">
+        // Dynamically to add the rows
+        function addrows() {
+            var data = "<tr><td><div class=\"form-group col-lg-5 \"><input class=\"form-control \" name=\"choices\" placeholder=\"Enter choices\" type=\"text\"></div></td></tr>";
+            $("#tablebody").append(data);
+        }
+        var i = 0;
+        function setmytree() {
+            $("#modalhead").empty();
+            $("#modalbody").empty();
+            var tbody = "";
+            
+            tbody += "<tr><td>" + "<input class=\"form-control \" placeholder=\"Enter EmailId\" type=\"text\" name=\"" + i + "\"  ></td></tr>";
+        
+            $('#modalbody').html(tbody);
+            $('#myModal').modal('show');
+        }
+
+        function addparticipants() {
+            i++;
+            var data = "<tr><td>" + "<input class=\"form-control \"  placeholder=\"Enter EmailId\" type=\"text\" name=\"" + i + "\"  ></td></tr>";
+            $('#modalbody').append(data);
+        }
+
+        function setupmytree() {
+            $("#modalhead").empty();
+            $("#modalbody").empty();
+            var thead = "";
+            var tbody = "";
+            var i = 1;
+            var columnsize = 1;
+            $("#maintable tbody tr").each(function() {
+                var value = $(this).closest("tr").find("input[name=choices]").val();
+                var contain = "";
+                if (value != "" && value != undefined) {
+                    if (columnsize == 1) {
+                        thead += "<tr><th>" + "Participants" + "</th>"
+                    }
+                    thead += "<th>" + value + "</th>"
+                    columnsize++;
+                }
+            });
+            thead += "</tr>";
+
+            $("#maintable tbody tr").each(function() {
+                var value = $(this).closest("tr").find("input[name=participants]").val();
+                var contain = "";
+                if (value != "" && value != undefined) {
+                    tbody += "<tr><td>" + value + "</td>"
+                    for (i = 0; i < columnsize - 1; i++) {
+                        var classname = "ratingbar " + i;
+                        tbody += "<td>"+"<input type=\"range\" min=\"0\" max=\"100\" value=\"0\" step=\"5\" name=\""+ i+"\"></td>"
+                    }
+                }
+                tbody += "</td>";
+            });
+            $('#modalhead').html(thead);
+            $('#modalbody').html(tbody);
+            $('#myModal').modal('show');
+        }
+
+        function checkresult() {
+            var count = [];
+            var j = 0;
+            var Colcount = document.getElementById('modaltable').rows[0].cells.length;
+            Colcount--;
+            $("#modaltable tbody#modalbody tr").each(function() {
+                j++;
+                for (i = 0; i < Colcount; i++) {
+                    var value = parseInt($(this).closest("tr").find('input[name="' + i + '"]').val());
+                    var contain = "";
+                    if (value != "" && value != undefined) {
+                        if (j == 1) {
+                            count[i] = value;
+                        } else {
+                            count[i] = count[i] + value;
+                        }
+                    }
+                }
+            });
+            debugger;
+            var largest = Math.max.apply(Math, count);
+            var index = count.indexOf(largest);
+            index++;
+            var myTable = document.getElementById('modaltable');
+            var rows = myTable.rows;
+            var firstRow = rows[0];
+            var result = firstRow.cells[index].innerHTML;
+            $("#result").empty();
+            if(result =="Participants")
+            {
+            $("#result").append("<br><ul><li><label>" + "Please enter your rating" + "</label></li></ul>");
+            }
+            else{
+            $("#result").append("<br><ul><li><label>" + result + "</label></li></ul>");
+          }
+        }
+
+
+        function Sendemail() {
+            debugger;
+            $('#sendmailbutton').prop('disable', true);
+            var columnsize = 1;
+            var choices = "";
+            $("#maintable tbody tr").each(function () {
+                var value = $(this).closest("tr").find("input[name=choices]").val();
+                var contain = "";
+                if (value != "" && value != undefined) {
+                    choices += value + " ";
+                }
+            });
+            
+            var email = "";
+            var j = 0;
+            $("#modaltable tbody#modalbody tr").each(function () {
+                var value = $(this).closest("tr").find("input[name= "+j+" ]").val();
+                var contain = "";
+                var choices = "";
+                if (value != "" && value != undefined) {
+                    email += value + " ";
+                }
+                j++;
+            });
+            
+            $.ajax({
+                url: '../Home/sendemail',
+                data: { 'choices': choices, 'emailids': email },
+                type: "POST",
+                success: function (result) {
+                    alert(result);
+                    $('#myModal').modal('toggle');
+                    $('#sendmailbutton').prop('disable', false);
+                },
+                error: function (response) {
+                    alert(response);
+                }
+
+            });
+            
+        }
+</script>

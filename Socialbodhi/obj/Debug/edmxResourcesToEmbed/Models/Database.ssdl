@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SocialbodhiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Choice">
+    <Key>
+      <PropertyRef Name="ChoiceId" />
+    </Key>
+    <Property Name="ChoiceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChoiceName" Type="nvarchar" MaxLength="256" />
+    <Property Name="InstanceId" Type="bigint" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Instance">
+    <Key>
+      <PropertyRef Name="InstanceId" />
+    </Key>
+    <Property Name="InstanceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Participants">
+    <Key>
+      <PropertyRef Name="ParticipantsId" />
+    </Key>
+    <Property Name="ParticipantsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstanceId" Type="bigint" />
+    <Property Name="ParticipantsName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Participantsemail" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rating" Type="int" />
+    <Property Name="ChoiceId" Type="bigint" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Password" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="256" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Choice_Instance">
+    <End Role="Instance" Type="Self.Instance" Multiplicity="0..1" />
+    <End Role="Choice" Type="Self.Choice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instance">
+        <PropertyRef Name="InstanceId" />
+      </Principal>
+      <Dependent Role="Choice">
+        <PropertyRef Name="InstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Choice_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Choice" Type="Self.Choice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Choice">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Instance_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Instance" Type="Self.Instance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Instance">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Participants_Choice">
+    <End Role="Choice" Type="Self.Choice" Multiplicity="0..1" />
+    <End Role="Participants" Type="Self.Participants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Choice">
+        <PropertyRef Name="ChoiceId" />
+      </Principal>
+      <Dependent Role="Participants">
+        <PropertyRef Name="ChoiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Participants_Instance">
+    <End Role="Instance" Type="Self.Instance" Multiplicity="0..1" />
+    <End Role="Participants" Type="Self.Participants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instance">
+        <PropertyRef Name="InstanceId" />
+      </Principal>
+      <Dependent Role="Participants">
+        <PropertyRef Name="InstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SocialbodhiModelStoreContainer">
+    <EntitySet Name="Choice" EntityType="Self.Choice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Instance" EntityType="Self.Instance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Participants" EntityType="Self.Participants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Choice_Instance" Association="Self.FK_Choice_Instance">
+      <End Role="Instance" EntitySet="Instance" />
+      <End Role="Choice" EntitySet="Choice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Choice_User" Association="Self.FK_Choice_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Choice" EntitySet="Choice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Instance_User" Association="Self.FK_Instance_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Instance" EntitySet="Instance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Participants_Choice" Association="Self.FK_Participants_Choice">
+      <End Role="Choice" EntitySet="Choice" />
+      <End Role="Participants" EntitySet="Participants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Participants_Instance" Association="Self.FK_Participants_Instance">
+      <End Role="Instance" EntitySet="Instance" />
+      <End Role="Participants" EntitySet="Participants" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

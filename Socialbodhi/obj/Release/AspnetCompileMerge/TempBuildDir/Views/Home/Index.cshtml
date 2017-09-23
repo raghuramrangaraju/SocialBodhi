@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Newlayout.cshtml";
+}
+
+<div class="wrapper" style="overflow: hidden;height: auto;">
+    <!-- Full Width Column -->
+    <div class="content-wrapper" style="min-height: 1775px;">
+        <div class="container">
+            <div class="col-md-12">
+                <!-- Widget: user widget style 1 -->
+                <div class="box box-widget widget-user-2">
+                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                    <div class="widget-user-header ">
+                        <div class="widget-user-image">
+                            <img src="~/AdminLTE-master/bodhi-tree-blue.jpg" width="100px" height="100px" alt="Bodhi">
+                        </div>
+                        <h1 class="widget-user-username">
+                            SocialBodhi
+                            <p>
+                                <small>The Social Decision Engine</small>
+                            </p>
+                        </h1>
+                    </div>
+                </div>
+                <!-- /.widget-user -->
+            </div>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Directions</h3>
+                            </div>
+                            <div class="box-body col-lg-5">
+                                <div class="widget-user-image">
+                                    <img style="width: 100%;" src="~/AdminLTE-master/YJnEkpx5.jpeg" alt="Bodhi">
+                                </div>
+                            </div>
+                            <div class="">
+                                <form role="form">
+                                    <div class="box-body col-lg-7">
+                                        <p>
+                                            Do you have a decision you need to make? Can't decide which movie to see or whether to break-up with someone? Get your friends to help!
+                                        </p>
+                                        <p>
+                                            <ul>
+                                                <li>
+                                                    Step 1: Tell me what choice you have to make
+                                                    <small>("Should you break-up or not break-up?")</small>
+                                                </li>
+                                                <li>
+                                                    Step 2: Tell me whom you want to ask
+                                                    <small>(Enter their emails or pick their Facebook IDs.)</small>
+                                                </li>
+                                                <li>
+                                                    Step 3: Tell me how many rounds to go
+                                                    <small>(The more important the decision, the more cycles of decision-and-elimination you should pick!)</small>
+                                                </li>
+                                            </ul>
+                                        <p>
+                                            That's it! Give the @Html.ActionLink("www.SocialBodhi.com","update","home") decision engine a go!
+                                        </p>
+                                    </div>
+                                    <!-- /.box-body -->
+                                    <div class="box-footer">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!--/.col (left) -->
+                    <!--/.col (right) -->
+                </div>
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="box box-success ">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">FAQ</h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <strong> Is this just another poll or survey?</strong>
+                                </li>
+                                <dd>
+                                    Not at all! A poll forces participants to choose a
+                                    <em>single</em> option, even if they are equally split between two or more choices. Surveys act exactly like polls in only one dimension: they provide information once only but leave the actual decision-making process unknown. SocialBodhi is a decision engine that not only allows for a greater granularity of options but fully utilizes it to help come to the optimal group consensus instead of a simple majority vote.
+                                </dd>
+                                <li>
+                                    <strong> What the heck's a bodhi?</strong>
+                                </li>
+                                <dd>
+                                    Bodhi means Enlighentment or Awakening; SocialBodhi is a Social Awakening/Enlightenment for any question or decision in your life! Just like the 35 Buddhas or the 5 Wisdom Buddhas, use your friends' wisdom to free yourself from the cycle of decision and indecision by using your friends and family! Setup your Social Interaction Tree next!
+                                </dd>
+                            </ul>
+                            <br>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!--/.col (left) -->
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.3.8
+            </div>
+            <strong>Copyright © 2016 <a href="http://socialbodhi.com/">SocialBodhi</a>.</strong> All rights reserved.
+        </div>
+        <!-- /.container -->
+    </footer>
+</div>

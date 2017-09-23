@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SocialbodhiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Choice">
+          <Key>
+            <PropertyRef Name="ChoiceId" />
+          </Key>
+          <Property Name="ChoiceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChoiceName" Type="nvarchar" MaxLength="256" />
+          <Property Name="InstanceId" Type="bigint" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Instance">
+          <Key>
+            <PropertyRef Name="InstanceId" />
+          </Key>
+          <Property Name="InstanceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="bigint" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Participants">
+          <Key>
+            <PropertyRef Name="ParticipantsId" />
+          </Key>
+          <Property Name="ParticipantsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstanceId" Type="bigint" />
+          <Property Name="ParticipantsName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Participantsemail" Type="nvarchar" MaxLength="500" />
+          <Property Name="Rating" Type="int" />
+          <Property Name="ChoiceId" Type="bigint" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="256" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreatedAt" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Choice_Instance">
+          <End Role="Instance" Type="Self.Instance" Multiplicity="0..1" />
+          <End Role="Choice" Type="Self.Choice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instance">
+              <PropertyRef Name="InstanceId" />
+            </Principal>
+            <Dependent Role="Choice">
+              <PropertyRef Name="InstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choice_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Choice" Type="Self.Choice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Choice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Instance_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Instance" Type="Self.Instance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Instance">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participants_Choice">
+          <End Role="Choice" Type="Self.Choice" Multiplicity="0..1" />
+          <End Role="Participants" Type="Self.Participants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Choice">
+              <PropertyRef Name="ChoiceId" />
+            </Principal>
+            <Dependent Role="Participants">
+              <PropertyRef Name="ChoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participants_Instance">
+          <End Role="Instance" Type="Self.Instance" Multiplicity="0..1" />
+          <End Role="Participants" Type="Self.Participants" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instance">
+              <PropertyRef Name="InstanceId" />
+            </Principal>
+            <Dependent Role="Participants">
+              <PropertyRef Name="InstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SocialbodhiModelStoreContainer">
+          <EntitySet Name="Choice" EntityType="Self.Choice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instance" EntityType="Self.Instance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Participants" EntityType="Self.Participants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Choice_Instance" Association="Self.FK_Choice_Instance">
+            <End Role="Instance" EntitySet="Instance" />
+            <End Role="Choice" EntitySet="Choice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choice_User" Association="Self.FK_Choice_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Choice" EntitySet="Choice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Instance_User" Association="Self.FK_Instance_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Instance" EntitySet="Instance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participants_Choice" Association="Self.FK_Participants_Choice">
+            <End Role="Choice" EntitySet="Choice" />
+            <End Role="Participants" EntitySet="Participants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participants_Instance" Association="Self.FK_Participants_Instance">
+            <End Role="Instance" EntitySet="Instance" />
+            <End Role="Participants" EntitySet="Participants" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SocialbodhiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SocialbodhiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Instances" EntityType="SocialbodhiModel.Instance" />
+          <EntitySet Name="Users" EntityType="SocialbodhiModel.User" />
+          <AssociationSet Name="FK_Instance_User" Association="SocialbodhiModel.FK_Instance_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Instance" EntitySet="Instances" />
+          </AssociationSet>
+          <EntitySet Name="Choices" EntityType="SocialbodhiModel.Choice" />
+          <AssociationSet Name="FK_Choice_Instance" Association="SocialbodhiModel.FK_Choice_Instance">
+            <End Role="Instance" EntitySet="Instances" />
+            <End Role="Choice" EntitySet="Choices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Choice_User" Association="SocialbodhiModel.FK_Choice_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Choice" EntitySet="Choices" />
+          </AssociationSet>
+          <EntitySet Name="Participants" EntityType="SocialbodhiModel.Participant" />
+          <AssociationSet Name="FK_Participants_Choice" Association="SocialbodhiModel.FK_Participants_Choice">
+            <End Role="Choice" EntitySet="Choices" />
+            <End Role="Participant" EntitySet="Participants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participants_Instance" Association="SocialbodhiModel.FK_Participants_Instance">
+            <End Role="Instance" EntitySet="Instances" />
+            <End Role="Participant" EntitySet="Participants" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Instance">
+          <Key>
+            <PropertyRef Name="InstanceId" />
+          </Key>
+          <Property Name="InstanceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int64" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="SocialbodhiModel.FK_Instance_User" FromRole="Instance" ToRole="User" />
+          <NavigationProperty Name="Choices" Relationship="SocialbodhiModel.FK_Choice_Instance" FromRole="Instance" ToRole="Choice" />
+          <NavigationProperty Name="Participants" Relationship="SocialbodhiModel.FK_Participants_Instance" FromRole="Instance" ToRole="Participant" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Instances" Relationship="SocialbodhiModel.FK_Instance_User" FromRole="User" ToRole="Instance" />
+          <NavigationProperty Name="Choices" Relationship="SocialbodhiModel.FK_Choice_User" FromRole="User" ToRole="Choice" />
+        </EntityType>
+        <Association Name="FK_Instance_User">
+          <End Type="SocialbodhiModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="SocialbodhiModel.Instance" Role="Instance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Instance">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Choice">
+          <Key>
+            <PropertyRef Name="ChoiceId" />
+          </Key>
+          <Property Name="ChoiceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChoiceName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="InstanceId" Type="Int64" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Instance" Relationship="SocialbodhiModel.FK_Choice_Instance" FromRole="Choice" ToRole="Instance" />
+          <NavigationProperty Name="User" Relationship="SocialbodhiModel.FK_Choice_User" FromRole="Choice" ToRole="User" />
+          <NavigationProperty Name="Participants" Relationship="SocialbodhiModel.FK_Participants_Choice" FromRole="Choice" ToRole="Participant" />
+        </EntityType>
+        <Association Name="FK_Choice_Instance">
+          <End Type="SocialbodhiModel.Instance" Role="Instance" Multiplicity="0..1" />
+          <End Type="SocialbodhiModel.Choice" Role="Choice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instance">
+              <PropertyRef Name="InstanceId" />
+            </Principal>
+            <Dependent Role="Choice">
+              <PropertyRef Name="InstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Choice_User">
+          <End Type="SocialbodhiModel.User" Role="User" Multiplicity="1" />
+          <End Type="SocialbodhiModel.Choice" Role="Choice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Choice">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Participant">
+          <Key>
+            <PropertyRef Name="ParticipantsId" />
+          </Key>
+          <Property Name="ParticipantsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InstanceId" Type="Int64" />
+          <Property Name="ParticipantsName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Participantsemail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="Int32" />
+          <Property Name="ChoiceId" Type="Int64" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Choice" Relationship="SocialbodhiModel.FK_Participants_Choice" FromRole="Participant" ToRole="Choice" />
+          <NavigationProperty Name="Instance" Relationship="SocialbodhiModel.FK_Participants_Instance" FromRole="Participant" ToRole="Instance" />
+        </EntityType>
+        <Association Name="FK_Participants_Choice">
+          <End Type="SocialbodhiModel.Choice" Role="Choice" Multiplicity="0..1" />
+          <End Type="SocialbodhiModel.Participant" Role="Participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Choice">
+              <PropertyRef Name="ChoiceId" />
+            </Principal>
+            <Dependent Role="Participant">
+              <PropertyRef Name="ChoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participants_Instance">
+          <End Type="SocialbodhiModel.Instance" Role="Instance" Multiplicity="0..1" />
+          <End Type="SocialbodhiModel.Participant" Role="Participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instance">
+              <PropertyRef Name="InstanceId" />
+            </Principal>
+            <Dependent Role="Participant">
+              <PropertyRef Name="InstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SocialbodhiModelStoreContainer" CdmEntityContainer="SocialbodhiEntities">
+          <EntitySetMapping Name="Instances">
+            <EntityTypeMapping TypeName="SocialbodhiModel.Instance">
+              <MappingFragment StoreEntitySet="Instance">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SocialbodhiModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Choices">
+            <EntityTypeMapping TypeName="SocialbodhiModel.Choice">
+              <MappingFragment StoreEntitySet="Choice">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+                <ScalarProperty Name="ChoiceName" ColumnName="ChoiceName" />
+                <ScalarProperty Name="ChoiceId" ColumnName="ChoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Participants">
+            <EntityTypeMapping TypeName="SocialbodhiModel.Participant">
+              <MappingFragment StoreEntitySet="Participants">
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ChoiceId" ColumnName="ChoiceId" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Participantsemail" ColumnName="Participantsemail" />
+                <ScalarProperty Name="ParticipantsName" ColumnName="ParticipantsName" />
+                <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+                <ScalarProperty Name="ParticipantsId" ColumnName="ParticipantsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

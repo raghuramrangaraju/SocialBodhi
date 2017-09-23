@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16fa301e8519438a974405a27506924b" Name="Diagram1">
+        <EntityTypeShape EntityType="SocialbodhiModel.Instance" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="SocialbodhiModel.User" Width="1.5" PointX="0.75" PointY="2.25" />
+        <AssociationConnector Association="SocialbodhiModel.FK_Instance_User" />
+        <EntityTypeShape EntityType="SocialbodhiModel.Choice" Width="1.5" PointX="5.25" PointY="4.875" />
+        <AssociationConnector Association="SocialbodhiModel.FK_Choice_Instance" />
+        <AssociationConnector Association="SocialbodhiModel.FK_Choice_User" />
+        <EntityTypeShape EntityType="SocialbodhiModel.Participant" Width="1.5" PointX="7.5" PointY="2.875" />
+        <AssociationConnector Association="SocialbodhiModel.FK_Participants_Choice" />
+        <AssociationConnector Association="SocialbodhiModel.FK_Participants_Instance" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

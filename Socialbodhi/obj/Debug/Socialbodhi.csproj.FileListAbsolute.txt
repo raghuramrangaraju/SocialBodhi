@@ -1,0 +1,111 @@
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\ApplicationInsights.config
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\csc.exe
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\System.Collections.Immutable.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\vbc.exe
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\VBCSCompiler.exe
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\roslyn\VBCSCompiler.exe.config
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\Socialbodhi.dll.config
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\Socialbodhi.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\Socialbodhi.pdb
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\Postal.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\RazorEngine.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\Postal.xml
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\RazorEngine.pdb
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\bin\RazorEngine.xml
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\obj\Debug\Socialbodhi.dll
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\obj\Debug\Socialbodhi.pdb
+c:\users\raghu\documents\visual studio 2015\Projects\Socialbodhi\Socialbodhi\obj\Debug\Socialbodhi.csprojResolveAssemblyReference.cache
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\ApplicationInsights.config
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\csc.exe
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\vbc.exe
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\VBCSCompiler.exe
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Socialbodhi.dll.config
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Socialbodhi.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Socialbodhi.pdb
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Postal.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\RazorEngine.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Postal.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\RazorEngine.pdb
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\RazorEngine.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\obj\Debug\Socialbodhi.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\obj\Debug\Socialbodhi.pdb
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Antlr3.Runtime.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\EntityFramework.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\EntityFramework.SqlServer.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.Web.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.ApplicationInsights.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Newtonsoft.Json.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Owin.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Helpers.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Mvc.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Optimization.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Razor.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.WebPages.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.WebPages.Razor.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\WebGrease.dll
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.Web.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.ApplicationInsights.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Helpers.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Mvc.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Optimization.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.Razor.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.WebPages.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\System.Web.WebPages.Razor.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Antlr3.Runtime.pdb
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Newtonsoft.Json.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\EntityFramework.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\EntityFramework.SqlServer.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\raghu\Desktop\Socialbodhi\Socialbodhi\obj\Debug\Socialbodhi.csprojResolveAssemblyReference.cache
