@@ -74,7 +74,7 @@ namespace Socialbodhi.Controllers
                         // Email to the participants
                         SmtpClient client = new SmtpClient("smtp.gmail.com");
                         //Authentication    
-                        client.Credentials = new NetworkCredential("rahuram777@gmail.com", "Raghu777890");
+                        client.Credentials = new NetworkCredential("<Email>", "<Password>");
                         MailMessage mailMessage = new MailMessage("Socialbodhi@gmail.com", item1);
                         mailMessage.Subject = "Request for poll";
                         //mailMessage.Body = "http://localhost:50569/home/poll?instance=" + newinstance.InstanceId + "&email=" + item1;
