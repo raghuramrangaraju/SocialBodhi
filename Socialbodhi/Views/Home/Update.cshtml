@@ -286,20 +286,29 @@
             j++;
         });
 
-        $.ajax({
-            url: '../Home/sendemail',
-            data: { 'choices': choices, 'emailids': email },
-            type: "POST",
-            success: function (result) {
+        if (email != "") {
 
-                $('#myModal').modal('toggle');
-                $('#sendmailbutton').prop('disabled', false);
-            },
-            error: function (response) {
+            $.ajax({
+                url: '../Home/sendemail',
+                data: { 'choices': choices, 'emailids': email },
+                type: "POST",
+                success: function (result) {
 
-            }
+                    $('#myModal').modal('toggle');
+                    $('#sendmailbutton').prop('disabled', false);
+                },
+                error: function (response) {
 
-        });
+                }
+
+            });
+        }
+        else {
+
+            alert("Enter a valid email");
+
+        }
+       
 
     }
 </script>
