@@ -11,10 +11,10 @@ The Social Bodhi Decision making Engine
   -  Update screen consists of textboxes to enter the choices. Add choices button is used to add more choices. When you finished entering your choices. Click on Setup button. 
 ![alt text](https://github.com/rahuram777/SocialBodhi/blob/master/Socialbodhi/AdminLTE-master/Images/Screenshot2.png)
 
--  A modal pop appears. Enter the participants emailid in the text boxes provided. Finally when you hit send button email is sent to the participants.
+-  A modal pop appears. Enter the participants emailid in the text boxes provided. Finally when you hit send button an email is sent to the participants.
 ![alt text](https://github.com/rahuram777/SocialBodhi/blob/master/Socialbodhi/AdminLTE-master/Images/Screenshot3.png)
 
-  - Poll Screen is where the participants enter the ratings of the choices which you have provided. Finally you should be able to see the maximum rated choice.
+  - Poll Screen is where the participants enter their ratings of the choices which you have provided. Finally you should be able to see the maximum rated choice.
 ![alt text](https://github.com/rahuram777/SocialBodhi/blob/master/Socialbodhi/AdminLTE-master/Images/Screenshot4.png)
 
 
